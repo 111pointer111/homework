@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include "second.h"
 struct list{
-	int num;            //numÊÇ½ÚµãµÄÐòºÅ
+	int num;            //numæ˜¯èŠ‚ç‚¹çš„åºå·
 	struct list* next;
 
 };
@@ -11,9 +11,9 @@ struct dlist{
 	struct dlist* next;
 	struct dlist* before;
 };
-struct list* creat(struct list* head,int x) //µ¥ÏòÁ´±íµÄ´´½¨
-{    //xÊÇÁ´±í½Úµã¸öÊý
-	struct list* head1 = head;//±£´æÍ·½áµãµÄÖ¸Õë
+struct list* creat(struct list* head,int x) //å•å‘é“¾è¡¨çš„åˆ›å»º
+{    //xæ˜¯é“¾è¡¨èŠ‚ç‚¹ä¸ªæ•°
+	struct list* head1 = head;//ä¿å­˜å¤´ç»“ç‚¹çš„æŒ‡é’ˆ
 	head->num = 1;
 	for (int i = 1; i < x; i++) {
 		struct list* term = (struct list*)malloc(sizeof(struct list));
@@ -24,19 +24,19 @@ struct list* creat(struct list* head,int x) //µ¥ÏòÁ´±íµÄ´´½¨
 	head->next = NULL;
 	return head1;
 }
-void shownum(struct list* head) //¿ÉÊÓ»¯Êý¾ÝºÍÅÐ¶ÏÊÇ·ñÎªÑ­»·Á´±í
+void shownum(struct list* head) //å¯è§†åŒ–æ•°æ®å’Œåˆ¤æ–­æ˜¯å¦ä¸ºå¾ªçŽ¯é“¾è¡¨
 {
 	printf("\n");
 	struct list* head1 = head;
 	while (1) {
 		if (head->next == NULL) {
 			printf("%d ", head->num);
-			printf("\nµ¥Á´±í½áÊø");
+			printf("\nå•é“¾è¡¨ç»“æŸ");
 			break;
 		}
 		if (head->next == head1) {
 			printf("%d ", head->num);
-			printf("\nÑ­»·Á´±í½áÊø");
+			printf("\nå¾ªçŽ¯é“¾è¡¨ç»“æŸ");
 			break;
 		}
 		printf("%d ", head->num);
@@ -44,10 +44,10 @@ void shownum(struct list* head) //¿ÉÊÓ»¯Êý¾ÝºÍÅÐ¶ÏÊÇ·ñÎªÑ­»·Á´±í
 	}
 	return;
 }
-struct dlist* dcreat(struct dlist* dhead,int x) //Ë«ÏòÁ´±íµÄ´´½¨
+struct dlist* dcreat(struct dlist* dhead,int x) //åŒå‘é“¾è¡¨çš„åˆ›å»º
 {
-	//xÊÇË«ÏòÁ´±í½Úµã¸öÊý
-	struct dlist* dhead1 = dhead,*dhead2=dhead;//±£´æÍ·½áµãµÄÖ¸Õë
+	//xæ˜¯åŒå‘é“¾è¡¨èŠ‚ç‚¹ä¸ªæ•°
+	struct dlist* dhead1 = dhead,*dhead2=dhead;//ä¿å­˜å¤´ç»“ç‚¹çš„æŒ‡é’ˆ
 	dhead->num = 1;
 	for (int i = 1; i < x; i++) {
 		struct dlist* term = (struct dlist*)malloc(sizeof(struct dlist));
@@ -66,7 +66,7 @@ struct dlist* dcreat(struct dlist* dhead,int x) //Ë«ÏòÁ´±íµÄ´´½¨
 	return dhead1;
 }
 struct list* headbefore;
-struct list* exchange(struct list* head) {//ÊµÏÖÆëÅ¼½»»»¹¦ÄÜ
+struct list* exchange(struct list* head) {//å®žçŽ°é½å¶äº¤æ¢åŠŸèƒ½
 	struct list* first;
 	if (head->next != NULL) {
 		first = head->next;
@@ -91,7 +91,7 @@ struct list* exchange(struct list* head) {//ÊµÏÖÆëÅ¼½»»»¹¦ÄÜ
 	}
 	return first;
 }
-struct list* midpoint(struct list* head) {
+struct list* midpoint(struct list* head) {//è¿”å›žä¸­é—´ä½ç½®çš„èŠ‚ç‚¹åœ°å€
 	struct list* head1 = head;
 	int j = 1;
 	for (head; head->next != NULL; head = head->next) j++;
@@ -103,7 +103,7 @@ struct list* midpoint(struct list* head) {
 	
 	return head1;
 }
-struct list* reverse(struct list* head) {
+struct list* reverse(struct list* head) {//ç¿»è½¬é“¾è¡¨
 	
 	if (head->next != NULL) {
 		struct list* head1 = head->next, * head2 = head1->next;
