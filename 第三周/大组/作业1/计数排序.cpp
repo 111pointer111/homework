@@ -2,7 +2,7 @@
 #include<stdlib.h>
 using namespace std;
 #include"paixu.h"
-int main77()
+int main()
 {
 	int n = 0;
 	cin >> n;

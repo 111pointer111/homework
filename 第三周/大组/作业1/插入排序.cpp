@@ -4,7 +4,7 @@ int* a;
 
 
 #include"paixu.h"
-int main1() 
+int main() 
 {
 	int n = 0;
 	cin >> n;

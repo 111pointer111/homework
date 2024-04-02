@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include"paixu.h"
-int main12() {
+int main() {
 
 	int n = 0;
 	cin >> n;

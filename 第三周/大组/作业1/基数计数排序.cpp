@@ -2,7 +2,7 @@
 #include<algorithm>
 using namespace std;
 #include"paixu.h"
-int main55()
+int main()
 {
 	int n = 0;
 	cin >> n;
